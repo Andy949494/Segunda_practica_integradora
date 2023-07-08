@@ -31,7 +31,6 @@ router.get('/githubcallback',passport.authenticate('github',{failureRedirect:'/l
 
 // Ruta protegida que devuelve los datos del usuario autenticado
 router.get('/current', passportCall('jwt'), (req, res) => {
-    // En este punto, el usuario ha sido autenticado correctamente
     res.json({ user: req.user });
   });
 export default router;
